@@ -96,10 +96,17 @@ source $ZSH/oh-my-zsh.sh
  alias autoremove="sudo apt autoremove -y"
  alias list="apt list --upgradable"
  alias fix="sudo apt -y --fix-broken install"	# 修复依赖
+
+# pacman
+ alias update="sudo pacman -Syu"
 # 直接 install softname 就可以安装软件
 install() {sudo apt install -y "$1"}
+install() {sudo pacman -S --noconfirm "$1"}
 # 直接 remove softname 就可以卸装软件
 remove() {sudo apt remove -y "$1"}
+remove() {sudo pacman -Rs --noconfirm "$1"}
+# 清理缓存文件
+ alias autoremove="sudo pacman -Scc"
 
 # 解压
 alias unzip="unzip -O CP936"
