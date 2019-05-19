@@ -8,3 +8,6 @@ yay -S i3lock-fancy-multimonitor
 
 # javaide
 pacman -S intellij-idea-community-edition
+
+# wps-office
+yay -S wps-office ttf-wps-fonts
