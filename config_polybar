@@ -3,7 +3,7 @@ monitor = ${env:MONITOR:DVI-D-0}
 width = 100%
 height = 30
 # 圆角半径
-radius = 15
+radius = 0
 fixed-center = true
 #bottom = true
 
@@ -56,6 +56,7 @@ label-focused = %index%
 label-focused-background = #4E524F
 label-focused-foreground = #272827
 label-focused-padding = 2
+label-focused-underline = #8AE234
 
 label-unfocused = %index%
 label-unfocused-background = #7E807E
@@ -130,7 +131,8 @@ expand-right = true
 format-spacing = 1
 
 label-open = 
-label-open-foreground = #657b83
+#label-open-foreground = #657b83
+label-open-foreground = #EF2929
 label-close =  cancel
 label-close-foreground = #BA2922
 label-separator = |

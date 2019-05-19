@@ -101,10 +101,10 @@ source $ZSH/oh-my-zsh.sh
  alias update="sudo pacman -Syu"
 # 直接 install softname 就可以安装软件
 install() {sudo apt install -y "$1"}
-install() {sudo pacman -S --noconfirm "$1"}
+install() {sudo pacman -S "$1"}
 # 直接 remove softname 就可以卸装软件
 remove() {sudo apt remove -y "$1"}
-remove() {sudo pacman -Rs --noconfirm "$1"}
+remove() {sudo pacman -Rs "$1"}
 # 清理缓存文件
  alias autoremove="sudo pacman -Scc"
 
@@ -122,6 +122,8 @@ alias dockerkillall="docker kill $(docker ps -a -q)"
 
 # vim ~/.vimrc
  alias vimrc="vim ~/.vimrc"
+ alias i3config="vim ~/.config/i3/config"
+ alias polybarconfig="vim ~/.config/polybar/config"
 
 # rm 删除文件到回收站，防止误删
 alias rm="trash"
