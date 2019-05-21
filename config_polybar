@@ -33,7 +33,7 @@ font-1 = "Font Awesome 5 Free:style=Solid:size=11;1"
 font-2 = "Font Awesome 5 Brands:size=11;1"
 
 modules-left = i3
-modules-center =
+modules-center = xwindow
 modules-right = volume date memory cpu battery wlan eth powermenu
 
 tray-position =
@@ -369,6 +369,11 @@ animation-charging-2-foreground = #aaff77
 animation-charging-1-foreground = #fba922
 animation-charging-0-foreground = #ff5555
 animation-charging-framerate = 750
+
+[module/xwindow]
+type = internal/xwindow
+#label-maxlen = 15
+#label-foreground = #bbb
 
 [settings]
 screenchange-reload = true

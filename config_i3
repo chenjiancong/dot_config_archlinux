@@ -7,8 +7,9 @@ set $mod Mod1
 new_window pixel 1
 new_float normal
 
-# 设置是否隐藏相接的两个窗口之间的边框
-hide_edge_borders none
+# i3默认每个窗口都有一个顶部栏,设置不需要它
+#hide_edge_borders none
+hide_edge_borders both
 
 bindsym $mod+u border none
 bindsym $mod+y border pixel 1
@@ -18,20 +19,15 @@ font xft:URWGothic-Book 11
 
 floating_modifier $mod
 
-#bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec xfce4-terminal
-
 # Window kill command 关闭窗口
 bindsym $mod+Shift+q kill
 
-# start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show run
-
 # change focus 切换窗口焦点
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+#bindsym $mod+semicolon focus right
+bindsym $mod+l focus right
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -55,8 +51,8 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation 窗口显示位置
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+Shift+h split h;exec notify-send 'tile horizontally'
+bindsym $mod+Shift+v split v;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container 焦点窗口全屏显示
@@ -87,8 +83,10 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # navigate workspaces next / previous 切换相邻工作区
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
+#bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Tab workspace next
+#bindsym $mod+Ctrl+Left workspace prev
+bindsym $mod+Shift+Tab workspace prev
 
 # workspaces 设置工作区
 set $ws1 1
@@ -101,10 +99,12 @@ set $ws7 7
 set $ws8 8
 
 # workspace 设置工作区显示在哪个屏幕
-# workspace 1 output VGA1
+# workspace 1 output DVI-D-0
+workspace 1 output DVI-D-1
 
 # 让程序启动时,只出现在指定工作区
-#assign [class="Google-chrome"] $ws4
+assign [class="Google-chrome"] $ws1
+assign [class="VirtualBox Machine"] $ws1
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -162,7 +162,8 @@ for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Skype"] floating enable border normal
 for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
-for_window [class="(?i)virtualbox"] floating enable border normal
+#for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border none
 for_window [class="Xfburn"] floating enable
 
 # switch to workspace with urgent window automatically
@@ -239,7 +240,7 @@ client.placeholder #cbd1cd #1e1e20 #cbd1cd #919893 #919893
 
 client.background #1e1e20
 
-# Gaps 空隙
+# Gaps 窗口间隙
 gaps inner 10
 gaps outer -4
 
@@ -300,13 +301,17 @@ bindsym Mod4+x exec --no-startup-id amixer -q set Master toggle
 bindsym XF86TouchpadOn exec --no-startup-id synclient Touchpadoff=0
 bindsym XF86TouchpadOff exec --no-startup-id synclient Touchpadoff=1
 
-# Application
-bindsym Mod4+w exec google-chrome-stable
-bindsym Mod4+e exec thunar
+# start program launcher
+bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+Return exec --no-startup-id xfce4-terminal
+bindsym Mod4+w exec --no-startup-id google-chrome-stable
+bindsym Mod4+e exec --no-startup-id thunar
+# 锁屏
+bindsym Mod4+l exec i3lock-fancy
 # 切换壁纸
-bindsym Ctrl+f exec variety -f
-bindsym Ctrl+n exec variety -n
-bindsym Ctrl+p exec variety -p
+bindsym Mod4+f exec --no-startup-id variety -f
+bindsym Mod4+n exec --no-startup-id variety -n
+bindsym Mod4+p exec --no-startup-id variety -p
 
 # Autostart
 exec_always --no-startup-id fcitx
