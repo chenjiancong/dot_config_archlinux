@@ -33,7 +33,7 @@ font-1 = "Font Awesome 5 Free:style=Solid:size=11;1"
 font-2 = "Font Awesome 5 Brands:size=11;1"
 
 modules-left = i3
-modules-center = xwindow
+modules-center = xwindow xkeyboard1
 modules-right = volume date memory cpu battery wlan eth powermenu
 
 tray-position =
@@ -75,7 +75,7 @@ label-urgent-padding = 2
 [module/volume]
 type = internal/volume
 format-volume =   <ramp-volume>  <label-volume>
-format-muted = 0% 
+format-muted =    0%
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 =  
@@ -170,9 +170,7 @@ format-padding = 1
 #type = internal/xkeyboard	??
 type = custom/script
 exec = echo ""
-click-left = rofi -modi run,drun,window -show drun
-click-right = i3lock-fancy -pg &
-click-middle = /usr/bin/rofi-logout
+blacklist-0 =num lock
 format-padding = 1
 
 [module/keyboard]
