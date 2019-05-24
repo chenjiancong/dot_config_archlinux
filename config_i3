@@ -15,7 +15,12 @@ bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 
-font xft:URWGothic-Book 11
+#font xft:URWGothic-Book 11
+font pango:DejaVu Sans Mono 12
+font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 12
+font pango:Terminus 11px
+font pango:Noto Sans CJK SC 12
+font pango:WenQuanYi Zen Hei 14
 
 floating_modifier $mod
 
@@ -317,8 +322,18 @@ bindsym Mod4+n exec --no-startup-id variety -n
 bindsym Mod4+p exec --no-startup-id variety -p
 
 # Autostart
-exec_always --no-startup-id fcitx
+#exec_always --no-startup-id fcitx
 # 开机启动数字键盘
 exec_always --no-startup-id numlockx &
 
 exec_always --no-startup-id xrandr --output DVI-D-1 --auto --output DVI-D-0 --auto --right-of DVI-D-1
+
+# Switch keyboard layout (setxkbmap) 更换输入法
+set $keyboard_mode "switch keyboard: c=cn, u=us"
+mode $keyboard_mode{
+    bindsym c exec --no-startup-id "setxkbmap cn && fcitx", mode "default"
+    bindsym u exec --no-startup-id "killall fcitx; setxkbmap us", mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym Ctrl+space mode $keyboard_mode

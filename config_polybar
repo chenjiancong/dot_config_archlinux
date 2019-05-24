@@ -33,8 +33,8 @@ font-1 = "Font Awesome 5 Free:style=Solid:size=11;1"
 font-2 = "Font Awesome 5 Brands:size=11;1"
 
 modules-left = i3
-modules-center = xwindow xkeyboard1
-modules-right = volume date memory cpu battery wlan eth powermenu
+modules-center = xwindow
+modules-right = xkeyboard1 volume date memory cpu battery wlan eth powermenu
 
 tray-position =
 ;tray-padding =
@@ -166,45 +166,14 @@ exec = echo "  "
 click-left = rofi -modi run,drun,window -show drun
 format-padding = 1
 
-[module/xkeyboard]
-#type = internal/xkeyboard	??
-type = custom/script
-exec = echo ""
-blacklist-0 =num lock
-format-padding = 1
-
-[module/keyboard]
-type = internal/xkeyboard
-exec = echo ""
-blacklist-0 = num lock
-blacklist-1 = scroll lock
-label-layout = %layout%
-label-layout-foreground = #458588
-label-layout-font = 2
-click-left = setxkbmap proylatin
-
 [module/xkeyboard1]
 type = internal/xkeyboard
 
-format = <label-layout> <label-indicator>
+#format = <label-layout> <label-indicator>
+format = <label-layout>
 format-spacing = 0
 
-label-layout = %name%
-label-layout-padding = 2
-label-layout-background = #bc99ed
-label-layout-foreground = #000
-
-label-indicator-padding = 2
-label-indicator-background = #8139e8
-
-[module/xkeyboard2]
-type = internal/xkeyboard
-
-format = <label-layout> <label-indicator> <label-layout>
-format-spacing = 0
-;format-separator = " "
-
-label-layout = %name%
+label-layout = %layout%
 label-layout-padding = 2
 label-layout-background = #bc99ed
 label-layout-foreground = #000
