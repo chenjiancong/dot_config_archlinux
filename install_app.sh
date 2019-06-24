@@ -19,6 +19,16 @@ sudo pacman -S --noconfirm git lightdm lightdm-gtk-greeter
 # 自动挂载硬盘
 sudo pacman -S gvfs gvfs-mtp
 
+# 漫画查看软件 mcomix
+sudo pacman -S mcomix
+
+# windows 共享工具
+sudo pacman -S gigolo gvfs-smb
+
+# 安装virtualbox
+# VBoxManage setextradata "Win_7" CustomVideoMode1 1920x1080x32
+sudo pacman -S virtualbox
+
 # 锁屏美化
 yay -S i3lock-fancy-multimonitor
 
@@ -30,6 +40,12 @@ yay -S wps-office ttf-wps-fonts
 
 # 壁纸
 sudo pacman -S feh variety
+
+# neofetch 查看系统基本信息
+sudo pacman -S neofetch
+
+# 设置时间同步
+sudo timedatectl set-local-rtc true
 
 # 科学上网
 sudo pacman -S shadowsocks

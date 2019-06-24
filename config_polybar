@@ -34,7 +34,7 @@ font-2 = "Font Awesome 5 Brands:size=11;1"
 
 modules-left = i3
 modules-center = xwindow
-modules-right = xkeyboard1 volume date memory cpu battery wlan eth powermenu
+modules-right = xkeyboard1 volume updates-arch date memory cpu battery wlan eth powermenu
 
 tray-position =
 ;tray-padding =
@@ -49,12 +49,14 @@ index-sort = true
 wrapping-scroll = false
 
 label-mode-padding = 2
+# 前景色
 label-mode-foreground = #657b83
+# 背景色
 label-mode-background = #272827
 
 label-focused = %index%
 label-focused-background = #4E524F
-label-focused-foreground = #272827
+label-focused-foreground = #8AE234
 label-focused-padding = 2
 label-focused-underline = #8AE234
 
@@ -75,7 +77,7 @@ label-urgent-padding = 2
 [module/volume]
 type = internal/volume
 format-volume =   <ramp-volume>  <label-volume>
-format-muted =    0%
+format-muted =    0%
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 =  
@@ -119,7 +121,7 @@ type = internal/date
 interval = 60
 date = %b %d %a
 time = %l:%M %p
-label =  %date%    %time%
+label =  %date%   %time%
 ;label =  %time%
 format-padding = 1
 
@@ -151,6 +153,7 @@ menu-1-1 = reboot
 menu-1-1-exec = reboot
 
 menu-2-0 = power off
+menu-2-0-foreground = #EF2929
 menu-2-0-exec = poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
@@ -160,11 +163,10 @@ menu-3-0-exec = pkill -KILL -u $USER
 menu-3-1 = cancel
 menu-3-1-exec = menu-open-0
 
-[module/rofi]
+[module/updates-arch]
 type = custom/script
-exec = echo "  "
-click-left = rofi -modi run,drun,window -show drun
-format-padding = 1
+exec = /home/jack/.config/polybar/scripts/updates-arch.sh
+interval = 600
 
 [module/xkeyboard1]
 type = internal/xkeyboard
@@ -175,7 +177,8 @@ format-spacing = 0
 
 label-layout = %layout%
 label-layout-padding = 2
-label-layout-background = #bc99ed
+label-layout-background = #739fcf
+#label-layout-background = #bc99ed
 label-layout-foreground = #000
 
 label-indicator-padding = 2
@@ -341,6 +344,7 @@ animation-charging-framerate = 750
 type = internal/xwindow
 #label-maxlen = 15
 #label-foreground = #bbb
+label-foreground = #859900
 
 [settings]
 screenchange-reload = true

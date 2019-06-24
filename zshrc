@@ -111,7 +111,7 @@ remove() {sudo pacman -Rs "$1"}
 # 解压
 alias unzip="unzip -O CP936"
 alias untar="tar -zxvf"
-alias unrar="unrar -x"
+alias unrar="unrar x"
 
 
 # docker
