@@ -47,6 +47,15 @@ sudo pacman -S neofetch
 # 设置时间同步
 sudo timedatectl set-local-rtc true
 
+# 图形界面解压软件
+sudo pacman -S xarchiver
+
+# 坚果云
+yay -S nutstore-experimental
+
+# 字体管理工具
+yay -S font-manager
+
 # 科学上网
 sudo pacman -S shadowsocks
 # https://wiki.archlinux.org/index.php/Shadowsocks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
@@ -71,3 +80,8 @@ sudo pacman -S shadowsocks
 <allow_active>yes</allow_active>
 省略
 </action>
+
+# 锁屏工具
+https://github.com/yvbbrjdr/i3lock-fancy-rapid
+# LightDM
+https://github.com/Litarvan/lightdm-webkit-theme-litarvan
