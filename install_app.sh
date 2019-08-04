@@ -22,6 +22,9 @@ sudo pacman -S gvfs gvfs-mtp
 # 漫画查看软件 mcomix
 sudo pacman -S mcomix
 
+# 看图工具
+sudo pacman -S shotwell
+
 # windows 共享工具
 sudo pacman -S gigolo gvfs-smb
 
@@ -55,6 +58,9 @@ yay -S nutstore-experimental
 
 # 字体管理工具
 yay -S font-manager
+
+# PDF支持中文显示
+sudo pacman -S popler-data
 
 # 科学上网
 sudo pacman -S shadowsocks
