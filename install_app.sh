@@ -19,6 +19,9 @@ sudo pacman -S --noconfirm git lightdm lightdm-gtk-greeter
 # 自动挂载硬盘
 sudo pacman -S gvfs gvfs-mtp
 
+# 透明效果
+sudo pacman -S compton
+
 # 漫画查看软件 mcomix
 sudo pacman -S mcomix
 
