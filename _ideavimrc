@@ -1,0 +1,23 @@
+" ideavim配置
+" 参考1 https://www.jianshu.com/p/ec6b4b4536aa
+" 参考2 https://my.oschina.net/funcy/blog/1832719
+
+
+" 突出显示当前行
+set cursorline
+" 突出显示当前列
+set cursorcolumn
+
+" 显示行号
+set number
+
+"相对行号
+set relativenumber
+
+"用jj取代ESC键
+inoremap jj <ESC>
+
+"跳转最后一行
+nnoremap <CR> G
+"跳转首行
+nnoremap <BS> gg
