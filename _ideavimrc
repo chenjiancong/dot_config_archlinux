@@ -2,6 +2,9 @@
 " 参考1 https://www.jianshu.com/p/ec6b4b4536aa
 " 参考2 https://my.oschina.net/funcy/blog/1832719
 
+" Vim 的默认寄存器和系统剪贴板共享
+set clipboard+=unnamed
+set history=100000
 
 " 突出显示当前行
 set cursorline
@@ -21,3 +24,7 @@ inoremap jj <ESC>
 nnoremap <CR> G
 "跳转首行
 nnoremap <BS> gg
+
+" Tab operation
+nnoremap t gt
+nnoremap T gT

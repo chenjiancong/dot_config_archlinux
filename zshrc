@@ -113,6 +113,8 @@ alias unzip="unzip -O CP936"
 alias untar="tar -zxvf"
 alias unrar="unrar x"
 
+# 查看系统信息,需要安装neofetch
+alias sysinfo="neofetch"
 
 # docker
 # 杀死所有正在运行的容器
@@ -143,4 +145,3 @@ fi
 #export PATH="$PYENV_ROOT/bin:$PATH"
 #eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
-
