@@ -66,7 +66,7 @@ yay -S font-manager
 sudo pacman -S popler-data
 
 # 科学上网
-sudo pacman -S shadowsocks
+#sudo pacman -S shadowsocks
 # https://wiki.archlinux.org/index.php/Shadowsocks_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
 # 在 /etc/shadowsocks/ 创建文件 myssh.json
 # 开机自动启动 systemctl enable shadowsocks@myssh
@@ -94,3 +94,13 @@ sudo pacman -S shadowsocks
 https://github.com/yvbbrjdr/i3lock-fancy-rapid
 # LightDM
 https://github.com/Litarvan/lightdm-webkit-theme-litarvan
+
+# fcitx 输入法安装
+sudo pacman -S fcitx fcitx-im fcitx-rime fcitx-configtool
+# 添加配置
+vim ~/.xprofile
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS='@im=fcitx'
+# 输入法皮肤
+yay -S fcitx-skin-material
