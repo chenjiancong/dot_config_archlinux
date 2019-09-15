@@ -89,6 +89,8 @@ source $ZSH/oh-my-zsh.sh
 # 一些有用的别名
  alias activete=". ~/venv/bin/activate"
  alias t="tmux"
+ # rime 重新部署
+ alias rime_rebuild="rime_deployer --build ~/.config/fcitx/rime /usr/share/rime-data/"
 
 # apt
  alias update="sudo apt-get update -y"

@@ -7,6 +7,9 @@
 # 解决自动挂载U盘, udiskie -2 命令为开机自动后台启动
 sudo pacman -S --noconfirm udiskie
 
+# 截图工具
+sudo pacman -S scrot xclip
+
 # 下拉terminal tilda
 sudo pacman -S --noconfirm tilda
 
