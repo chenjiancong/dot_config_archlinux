@@ -92,18 +92,21 @@ source $ZSH/oh-my-zsh.sh
  # rime 重新部署
  alias rime_rebuild="rime_deployer --build ~/.config/fcitx/rime /usr/share/rime-data/"
 
-# apt
+# update system
  alias update="sudo apt-get update -y"
+ alias yayupdate="yay -Syu -y"
  alias upgrade="sudo apt upgrade -y"
  alias autoremove="sudo apt autoremove -y"
  alias list="apt list --upgradable"
  alias fix="sudo apt -y --fix-broken install"	# 修复依赖
 
 # pacman
- alias update="sudo pacman -Syu"
+# alias update="sudo pacman -Syu --noconfirm"
+# powerpill
+ alias update="sudo powerpill -Syu --noconfirm"
 # 直接 install softname 就可以安装软件
 install() {sudo apt install -y "$1"}
-install() {sudo pacman -S "$1"}
+install() {sudo powerpill -S "$1"}
 # 直接 remove softname 就可以卸装软件
 remove() {sudo apt remove -y "$1"}
 remove() {sudo pacman -Rs "$1"}
@@ -115,12 +118,14 @@ alias unzip="unzip -O CP936"
 alias untar="tar -zxvf"
 alias unrar="unrar x"
 
+alias excel="et"
+
 # 查看系统信息,需要安装neofetch
 alias sysinfo="neofetch"
 
 # docker
 # 杀死所有正在运行的容器
-alias dockerkillall="docker kill $(docker ps -a -q)"
+#alias dockerkillall="docker kill $(docker ps -a -q)"
 #快速登录MariaDB
 # alias logindb="mycli -uroot -p1234 -P3307 -h0.0.0.0"
 
@@ -141,6 +146,11 @@ trash()
     TERM=xterm-256color
 fi
 
+# 列出 systemclt所有服务
+alias systemctlAll= "systemctl list-unit-files --type service -all"
+
+# 列出 systemctl 运行中服务
+alias systemctlRun="sudo systemctl |grep running"
 
 # pyenv
 #export PYENV_ROOT="$HOME/.pyenv"

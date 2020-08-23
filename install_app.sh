@@ -7,8 +7,33 @@
 # 解决自动挂载U盘, udiskie -2 命令为开机自动后台启动
 sudo pacman -S --noconfirm udiskie
 
+# fcitx 输入法安装
+sudo pacman -S --noconfirm fcitx fcitx-im fcitx-rime fcitx-configtool
+
+# 网络管理工具
+sudo install -S networkmanager nm-connection-editor dhclient
+# nm-connection-editor 图形管理界面; dhclient 全功能dhcp和IPV6支持
+# 启用 NetworkManager
+# 开机自动启动
+# systemctl enable NetworkManager
+# 立刻启动
+# systemctl start NetworkManager
+
+# 无线网卡 ID 0bda:818b Realtek Semiconductor Corp. RTL8192EU 驱动
+#yay -S rtl8192eu
+
 # 截图工具
-sudo pacman -S scrot xclip
+sudo pacman -S --noconfirm scrot xclip deeping-screen-recorder
+
+# powerpill 替代 pacman
+yay -S --noconfirm  powerpill
+
+# lxapperance 主题更换
+psudo pacman -S --noconfirm lxappearance-gtk3
+
+# vim /etc/pacman.conf
+# 不进行包签名验证
+#SigLevel = PackageRequired
 
 # 下拉terminal tilda
 sudo pacman -S --noconfirm tilda
@@ -20,53 +45,59 @@ sudo pacman -S --noconfirm git python-pip
 sudo pacman -S --noconfirm git lightdm lightdm-gtk-greeter
 
 # 自动挂载硬盘
-sudo pacman -S gvfs gvfs-mtp
+sudo pacman -S --noconfirm gvfs gvfs-mtp
 
 # 透明效果
-sudo pacman -S compton
+sudo pacman -S --noconfirm compton
 
 # 漫画查看软件 mcomix
-sudo pacman -S mcomix
+sudo pacman -S --noconfirm mcomix
 
 # 看图工具
-sudo pacman -S shotwell
+sudo pacman -S --noconfirm shotwell
 
 # windows 共享工具
-sudo pacman -S gigolo gvfs-smb
+sudo pacman -S --noconfirm gigolo gvfs-smb
 
 # 安装virtualbox
 # VBoxManage setextradata "Win_7" CustomVideoMode1 1920x1080x32
-sudo pacman -S virtualbox
+sudo pacman -S --noconfirm virtualbox
 
 # 锁屏美化
-yay -S i3lock-fancy-multimonitor
+yay -S --noconfirm i3lock-fancy-multimonitor
 
 # javaide
-pacman -S intellij-idea-community-edition
+#pacman -S intellij-idea-community-edition
 
-# wps-office
-yay -S wps-office ttf-wps-fonts
+# wps-office 及中文字体
+yay -S --noconfirm wps-office ttf-wps-fonts wps-office-mui-zh-cn
 
 # 壁纸
-sudo pacman -S feh variety
+sudo pacman -S --noconfirm feh variety
 
 # neofetch 查看系统基本信息
-sudo pacman -S neofetch
+sudo pacman -S --noconfirm neofetch
 
 # 设置时间同步
 sudo timedatectl set-local-rtc true
 
 # 图形界面解压软件
-sudo pacman -S xarchiver
+sudo pacman -S --noconfirm xarchiver
 
 # 坚果云
-yay -S nutstore-experimental
+yay -S --noconfirm nutstore-experimental
 
 # 字体管理工具
-yay -S font-manager
+yay -S --noconfirm font-manager
+
+# polybar 字体
+sudo pacman -S --noconfirm ttf-font-awesome
 
 # PDF支持中文显示
-sudo pacman -S popler-data
+sudo pacman -S --noconfirm popler-data
+
+# 字体安装
+sudo pacman -S --noconfirm ttf-jetbrains-mono
 
 # 科学上网
 #sudo pacman -S shadowsocks
@@ -98,8 +129,6 @@ https://github.com/yvbbrjdr/i3lock-fancy-rapid
 # LightDM
 https://github.com/Litarvan/lightdm-webkit-theme-litarvan
 
-# fcitx 输入法安装
-sudo pacman -S fcitx fcitx-im fcitx-rime fcitx-configtool
 # 添加配置
 vim ~/.xprofile
 export GTK_IM_MODULE=fcitx
